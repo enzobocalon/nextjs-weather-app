@@ -2,6 +2,7 @@ import Button from '../Button';
 import * as S from './styles'
 
 import { BiTargetLock } from 'react-icons/bi';
+import WeatherDisplay from '../WeatherDisplay';
 
 const Sidebar = () => {
   return (
@@ -18,7 +19,7 @@ const Sidebar = () => {
       </S.TopContent>
 
       <S.MiddleContent>
-        
+        <WeatherDisplay isMainWeather={true}/>
       </S.MiddleContent>
     </S.Container>
   );

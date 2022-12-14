@@ -17,6 +17,31 @@ export const TopContent = styled.div`
 `;
 
 export const MiddleContent = styled.div`
-  background-image: url(${cloudsBG.src});
   width: 100%;
+  height: 40vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background-image: url(${cloudsBG.src});
+    background-repeat: no-repeat;
+    background-position: center 100%;
+
+    background-size: 150%;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 475px;
+    height: 40vh;
+
+    opacity: .5;
+  }
+
 `;
