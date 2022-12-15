@@ -1,4 +1,5 @@
 import Button from '../Button';
+import WeatherCard from '../WeatherCard';
 import * as S from './styles'
 
 const Forecast = () => {
@@ -13,6 +14,14 @@ const Forecast = () => {
           ºF
         </Button>
       </S.Header>
+
+      <S.ForecastRow>
+        <WeatherCard />
+        <WeatherCard />
+        <WeatherCard />
+        <WeatherCard />
+        <WeatherCard />
+      </S.ForecastRow>
     </S.Container>
   );
 }
