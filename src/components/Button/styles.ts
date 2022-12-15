@@ -5,6 +5,9 @@ interface Props {
   isActive?: boolean;
   children: React.ReactNode;
   customBackground?: string;
+  fontWeight?: string;
+  fontSize?: string;
+
 }
 
 
@@ -14,7 +17,9 @@ export const Button = styled.button<Props>`
   justify-content: center;
   border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-weight: ${props => props.fontWeight ? props.fontWeight : '500'};
   font-family: 'Raleway', sans-serif;
+  font-size: ${props => props.fontSize ? `${props.fontSize}px` : '16px'};
   padding: ${props => props.buttonType === 'rounded' ? '' : '10px 18px'};
   border-radius: ${props => props.buttonType === 'rounded' ? '50%' : ''};
   width: ${props => props.buttonType === 'rounded' ? '40px' : 'auto'};
