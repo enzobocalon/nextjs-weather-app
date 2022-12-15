@@ -6,13 +6,12 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 1;
 
   img {
     margin-top: 10px;
   }
 
-  div {
+  div:last-of-type {
     margin-top: 2rem;
     display: flex;
     width: 100%;

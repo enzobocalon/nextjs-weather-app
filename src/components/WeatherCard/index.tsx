@@ -1,16 +1,15 @@
-import Image from 'next/image';
 import * as S from './styles'
 
-import snow from '../../assets/Snow.png'
+import WeatherDisplay from '../WeatherDisplay';
 
 const WeatherCard = () => {
   return (
     <S.Container>
       <p>Tomorrow</p>
-      <Image src={snow.src} width={65} height={65} alt='weather'/>
+      <WeatherDisplay isMainWeather={false}/>
       <div>
         <span>16ºC</span>
-        <span>18 ºC</span>
+        <span>18ºC</span>
       </div>
     </S.Container>
   );
