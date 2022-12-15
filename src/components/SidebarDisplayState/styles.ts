@@ -57,6 +57,10 @@ export const LowerMiddleContent = styled.div`
     font-size: 2.25rem;
     font-weight: 600;
   }
+
+  @media (max-height: 900px) {
+    padding: 0;
+  }
 `;
 
 export const Footer = styled.div`
