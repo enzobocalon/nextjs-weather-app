@@ -1,11 +1,15 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+import {motion} from 'framer-motion';
+
+export const Container = styled(motion.div)`
   height: 100%;
   padding: 1.125rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  background-color: #1E213A;
+
 `;
 
 export const CloseContainer = styled.div`

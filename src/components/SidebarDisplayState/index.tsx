@@ -8,11 +8,16 @@ import WeatherDisplay from '../WeatherDisplay';
 import WeatherInformation from '../WeatherInformation';
 import Button from '../Button';
 
+import { useContext } from 'react';
+import { SearchContext } from '../../contexts/Search';
+
 const SidebarDisplayState = () => {
+  const {setIsSearchActive} = useContext(SearchContext);
+
   return (
-    <>
+    <S.Container animate={{x: 0}} initial={{x: '-100%'}} transition={{ease: "linear", duration: .3}}>
       <S.TopContent>
-        <Button buttonType='normal'>
+        <Button buttonType='normal' onClick={() => setIsSearchActive(true)}>
           Search for places
         </Button>
 
@@ -42,7 +47,7 @@ const SidebarDisplayState = () => {
           <span>Helsinki</span>
         </S.FooterContent>
       </S.Footer>
-    </>
+    </S.Container>
   )
 }
 

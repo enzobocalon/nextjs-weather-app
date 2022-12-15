@@ -1,6 +1,6 @@
 import * as S from './styles'
 
-interface ButtonProps {
+interface ButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   buttonType: 'normal' | 'rounded';
   isActive?: boolean;
   customBackground?: string;
@@ -9,9 +9,10 @@ interface ButtonProps {
   fontSize?: string;
 }
 
-const Button = ({buttonType, isActive, customBackground, children, fontWeight, fontSize}: ButtonProps) => {
+const Button = ({buttonType, isActive, customBackground, children, fontWeight, fontSize, onClick}: ButtonProps) => {
   return (
     <S.Button
+      onClick={onClick}
       buttonType={buttonType}
       isActive={isActive}
       customBackground={customBackground}

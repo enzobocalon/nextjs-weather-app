@@ -2,6 +2,12 @@ import styled from "styled-components";
 
 import cloudsBG from '../../assets/Cloud-background.png';
 
+import {motion} from 'framer-motion';
+
+export const Container = styled(motion.div)`
+  background-color: #1E213A;
+  min-height: 100vh;
+`;
 
 export const TopContent = styled.div`
   display: flex;
