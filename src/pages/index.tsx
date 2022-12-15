@@ -1,10 +1,14 @@
 import Head from 'next/head'
+import Forecast from '../components/Forecast'
 import Sidebar from '../components/Sidebar'
+
+import * as S from '../styles'
+
 import { GlobalStyle } from '../styles/global'
 
 export default function Home() {
   return (
-    <>
+    <S.Container>
       <GlobalStyle />
       <Head>
         <title>Weather App</title>
@@ -12,6 +16,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Sidebar />
-    </>
+      <Forecast />
+    </S.Container>
   )
 }
