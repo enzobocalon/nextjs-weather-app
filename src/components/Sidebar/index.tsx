@@ -2,7 +2,11 @@ import Button from '../Button';
 import * as S from './styles'
 
 import { BiTargetLock } from 'react-icons/bi';
+import { MdLocationOn } from 'react-icons/md'
+import { VscCircleFilled } from 'react-icons/vsc'
+
 import WeatherDisplay from '../WeatherDisplay';
+import WeatherInformation from '../WeatherInformation';
 
 const Sidebar = () => {
   return (
@@ -21,6 +25,24 @@ const Sidebar = () => {
       <S.MiddleContent>
         <WeatherDisplay isMainWeather={true}/>
       </S.MiddleContent>
+
+      <S.LowerMiddleContent>
+        <WeatherInformation title='15' subtitle='ºC'/>
+        <h2>Shower</h2>
+      </S.LowerMiddleContent>
+
+      <S.Footer>
+        <S.FooterContent>
+          <span>Today</span>
+          <VscCircleFilled size={8} color={'#88869D'}/>
+          <span>Fri, 5 Jun</span>
+        </S.FooterContent>
+
+        <S.FooterContent>
+          <MdLocationOn color={'#88869D'}/>
+          <span>Helsinki</span>
+        </S.FooterContent>
+      </S.Footer>
     </S.Container>
   );
 }

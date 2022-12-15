@@ -14,6 +14,7 @@ export const Button = styled.button<Props>`
   justify-content: center;
   border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: 'Raleway', sans-serif;
   padding: ${props => props.buttonType === 'rounded' ? '' : '10px 18px'};
   border-radius: ${props => props.buttonType === 'rounded' ? '50%' : ''};
   width: ${props => props.buttonType === 'rounded' ? '40px' : 'auto'};
