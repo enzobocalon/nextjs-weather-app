@@ -26,7 +26,7 @@ const SidebarDisplayState = () => {
       </S.MiddleContent>
 
       <S.LowerMiddleContent>
-        <WeatherInformation title='15' subtitle='ºC'/>
+        <WeatherInformation title='15' subtitle='ºC' isMainContent={true}/>
         <h2>Shower</h2>
       </S.LowerMiddleContent>
 
