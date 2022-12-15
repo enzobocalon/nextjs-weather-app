@@ -9,7 +9,7 @@ export const TopContent = styled.div`
   align-items: center;
   padding: 2.625rem 2.875rem;
 
-  @media (max-width: 350px) {
+  @media (max-width: 850px) {
     padding: 2rem;
   }
 `;
@@ -36,10 +36,16 @@ export const MiddleContent = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    max-width: 475px;
+    max-width: 459px;
     height: 30vh;
 
     opacity: .3;
+
+    @media (max-width: 850px) {
+      max-width: 100%;
+      background-size: 550px;
+      background-position: 50% 100%;
+  }
   }
 
 `;

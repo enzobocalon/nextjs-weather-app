@@ -11,8 +11,12 @@ export const Container = styled.section`
   align-items: center;
   gap: 72px;
 
-  @media (max-width: 1100px) {
+  @media (max-width: 1439px) {
     padding: 2rem;
+  }
+
+  @media (max-width: 850px) {
+    width: 100%;
   }
 `;
 
