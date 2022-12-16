@@ -7,6 +7,7 @@ import * as S from '../styles'
 import axios from 'axios';
 
 import { GlobalStyle } from '../styles/global'
+import { GetServerSideProps } from 'next'
 
 export default function Home({data}) {
   console.log(data)
@@ -26,7 +27,7 @@ export default function Home({data}) {
   )
 }
 
-export async function getServerSideProps({ req }) {
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   // Handle IP
 
   const forwarded = req.headers["x-forwarded-for"]
