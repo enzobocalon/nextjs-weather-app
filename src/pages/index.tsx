@@ -8,7 +8,8 @@ import axios from 'axios';
 
 import { GlobalStyle } from '../styles/global'
 
-export default function Home() {
+export default function Home({data}) {
+  console.log(data)
   return (
     <SearchProvider>
       <S.Container>
