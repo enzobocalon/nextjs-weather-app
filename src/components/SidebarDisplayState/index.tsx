@@ -10,9 +10,18 @@ import Button from '../Button';
 
 import { useContext } from 'react';
 import { SearchContext } from '../../contexts/Search';
+import { WeatherContext } from '../../contexts/Weather';
+import { formatDate } from '../../utils/formatDate';
 
 const SidebarDisplayState = () => {
   const {setIsSearchActive} = useContext(SearchContext);
+  const { weatherData } = useContext(WeatherContext);
+
+  if (!weatherData) {
+    return null;
+  }
+
+  console.log(weatherData)
 
   return (
     <S.Container animate={{x: 0}} initial={{x: '-100%'}} transition={{ease: "linear", duration: .3}}>
@@ -39,12 +48,12 @@ const SidebarDisplayState = () => {
         <S.FooterContent>
           <span>Today</span>
           <VscCircleFilled size={8} color={'#88869D'}/>
-          <span>Fri, 5 Jun</span>
+          <span>{formatDate(weatherData.location.localtime)}</span>
         </S.FooterContent>
 
         <S.FooterContent>
           <MdLocationOn color={'#88869D'}/>
-          <span>Helsinki</span>
+          <span>{weatherData.location.name}</span>
         </S.FooterContent>
       </S.Footer>
     </S.Container>
