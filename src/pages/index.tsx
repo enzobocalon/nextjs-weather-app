@@ -9,7 +9,7 @@ import axios from 'axios';
 import { GlobalStyle } from '../styles/global'
 import { GetServerSideProps } from 'next'
 
-export default function Home({data}) {
+export default function Home({data}: any) {
   console.log(data)
   return (
     <SearchProvider>
@@ -31,7 +31,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   // Handle IP
 
   const forwarded = req.headers["x-forwarded-for"]
-  const ip = forwarded ? forwarded.split(/, /)[0] : req.connection.remoteAddress
+  const ip = forwarded ? (forwarded as string).split(/, /)[0] : req.connection.remoteAddress
 
   // Handle Default Data
 
