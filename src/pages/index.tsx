@@ -4,6 +4,7 @@ import Sidebar from '../components/Sidebar'
 import SearchProvider from '../contexts/Search'
 
 import * as S from '../styles'
+import axios from 'axios';
 
 import { GlobalStyle } from '../styles/global'
 
@@ -22,4 +23,26 @@ export default function Home() {
       </S.Container>
     </SearchProvider>
   )
+}
+
+export async function getServerSideProps({ req }) {
+  // Handle IP
+
+  const forwarded = req.headers["x-forwarded-for"]
+  const ip = forwarded ? forwarded.split(/, /)[0] : req.connection.remoteAddress
+
+  // Handle Default Data
+
+    const response = await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=8cdae16bc23d4715b9e164704221612&q=${ip}&days=5&aqi=no&alerts=no`, {
+      headers: { "Accept-Encoding": "gzip,deflate,compress" }
+    });
+
+    console.log(response.data)
+
+  return {
+    props: {
+      ip,
+      data: response.data
+    },
+  }
 }
