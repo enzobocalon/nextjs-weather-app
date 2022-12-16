@@ -1,3 +1,4 @@
 export interface Location {
-  name: string
+  name: string,
+  localtime: string
 }
