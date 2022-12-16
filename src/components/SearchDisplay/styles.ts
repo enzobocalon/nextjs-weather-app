@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {motion} from 'framer-motion';
 
 export const Container = styled(motion.div)`
-  height: 100%;
+  min-height: 100vh;
   padding: 1.125rem 2rem;
   display: flex;
   flex-direction: column;
