@@ -21,8 +21,6 @@ const SidebarDisplayState = () => {
     return null;
   }
 
-  console.log(weatherData)
-
   return (
     <S.Container animate={{x: 0}} initial={{x: '-100%'}} transition={{ease: "linear", duration: .3}}>
       <S.TopContent>
@@ -36,12 +34,12 @@ const SidebarDisplayState = () => {
       </S.TopContent>
 
       <S.MiddleContent>
-        <WeatherDisplay isMainWeather={true}/>
+        <WeatherDisplay weather={weatherData.current.condition.code} isMainWeather={true}/>
       </S.MiddleContent>
 
       <S.LowerMiddleContent>
-        <WeatherInformation title='15' subtitle='ºC' isMainContent={true}/>
-        <h2>Shower</h2>
+        <WeatherInformation title={weatherData.current.temp_c} subtitle='ºC' isMainContent={true}/>
+        <h2>{weatherData.current.condition.text}</h2>
       </S.LowerMiddleContent>
 
       <S.Footer>
