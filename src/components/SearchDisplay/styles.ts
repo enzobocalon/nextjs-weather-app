@@ -46,6 +46,8 @@ export const SearchInput = styled.input`
 
 export const SearchResultContainer = styled.div`
   width: 100%;
+  max-height: 100%;
+  overflow-y: auto;
 `;
 
 export const SearchResult = styled.div`

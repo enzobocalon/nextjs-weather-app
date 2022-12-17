@@ -23,7 +23,7 @@ export const Button = styled.button<Props>`
   padding: ${props => props.buttonType === 'rounded' ? '' : '10px 18px'};
   border-radius: ${props => props.buttonType === 'rounded' ? '50%' : ''};
   width: ${props => props.buttonType === 'rounded' ? '40px' : 'auto'};
-  height: ${props => props.buttonType === 'rounded' ? '40px' : '100%'};
+  height: ${props => props.buttonType === 'rounded' ? '40px' : '50px'};
   background-color: ${props => props.customBackground ? props.customBackground : props.isActive ? '#E7E7EB' : '#6E707A'};
   color: ${props => props.isActive ? '#110E3C' : '#E7E7EB;'};
   cursor: pointer;

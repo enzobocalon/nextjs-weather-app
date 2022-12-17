@@ -15,8 +15,6 @@ const Forecast = () => {
     return null;
   }
 
-  console.log(weatherData)
-
   return (
     <S.Container>
       <S.Header>
