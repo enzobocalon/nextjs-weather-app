@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react';
-import { ApiResponse } from '../types/APIResponse';
+import { ApiResponse } from '../types/ApiResponse';
 
 interface IModes {
   weatherData: ApiResponse['data'] | null;
