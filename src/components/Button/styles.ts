@@ -27,6 +27,7 @@ export const Button = styled.button<Props>`
   background-color: ${props => props.customBackground ? props.customBackground : props.isActive ? '#E7E7EB' : '#6E707A'};
   color: ${props => props.isActive ? '#110E3C' : '#E7E7EB;'};
   cursor: pointer;
+  transition: all .3s ease;
 
   & > svg {
     flex: 1;

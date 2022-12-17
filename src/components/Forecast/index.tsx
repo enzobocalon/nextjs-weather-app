@@ -9,7 +9,7 @@ import { useContext } from 'react';
 import { WeatherContext } from '../../contexts/Weather';
 
 const Forecast = () => {
-  const { weatherData } = useContext(WeatherContext);
+  const { weatherData, celsius, setCelsius } = useContext(WeatherContext);
 
   if (!weatherData) {
     return null;
@@ -20,11 +20,11 @@ const Forecast = () => {
   return (
     <S.Container>
       <S.Header>
-        <Button buttonType='rounded' fontWeight='700' fontSize='18' isActive={true}>
+        <Button buttonType='rounded' fontWeight='700' fontSize='18' isActive={celsius} onClick={() => setCelsius(true)}>
           ºC
         </Button>
 
-        <Button buttonType='rounded' fontWeight='700' fontSize='18'>
+        <Button buttonType='rounded' fontWeight='700' fontSize='18' isActive={!celsius} onClick={() => setCelsius(false)}>
           ºF
         </Button>
       </S.Header>
