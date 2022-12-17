@@ -3,9 +3,8 @@ import styled from "styled-components";
 const directions = ['NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW', 'N']
 
 const getAngle = (dir: string) => {
-  const index = directions.findIndex(direction => direction === dir) + 1;
-  if (directions[index] == 'N') return 0
-  return 22.5*index;
+  const index = directions.indexOf(dir);
+  return index === -1 ? 0 : 22.5 * (index + 1);
 }
 
 interface Props {
