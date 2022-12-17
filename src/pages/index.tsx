@@ -8,7 +8,7 @@ import axios from 'axios';
 
 import { GlobalStyle } from '../styles/global'
 import { GetServerSideProps } from 'next'
-import { ApiResponse } from '../types/APIResponse'
+import { ApiResponse } from '../types/ApiResponse'
 import { WeatherContext } from '../contexts/Weather'
 
 import { useContext, useEffect } from 'react';
