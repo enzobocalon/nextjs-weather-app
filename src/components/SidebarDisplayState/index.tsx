@@ -12,13 +12,25 @@ import { useContext } from 'react';
 import { SearchContext } from '../../contexts/Search';
 import { WeatherContext } from '../../contexts/Weather';
 import { formatDate } from '../../utils/formatDate';
+import { getForecast } from '../../services/getForecast';
 
-const SidebarDisplayState = () => {
+interface Props {
+  ip: string | undefined;
+}
+
+const SidebarDisplayState = ({ip}: Props) => {
   const {setIsSearchActive} = useContext(SearchContext);
-  const { celsius, weatherData } = useContext(WeatherContext);
+  const { celsius, weatherData, setWeatherData } = useContext(WeatherContext);
 
   if (!weatherData) {
     return null;
+  }
+
+  const handleSearch = async () => {
+    if (ip) {
+      const response = await getForecast(ip);
+      setWeatherData(response);
+    }
   }
 
   return (
@@ -28,7 +40,7 @@ const SidebarDisplayState = () => {
           Search for places
         </Button>
 
-        <Button buttonType='rounded'>
+        <Button buttonType='rounded' onClick={handleSearch}>
           <BiTargetLock color='#E7E7EB' size={24}/>
         </Button>
       </S.TopContent>

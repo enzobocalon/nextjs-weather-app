@@ -13,7 +13,7 @@ import { WeatherContext } from '../contexts/Weather'
 
 import { useContext, useEffect } from 'react';
 
-export default function Home({data}: ApiResponse) {
+export default function Home({ip, data}: ApiResponse) {
   const { setWeatherData } = useContext(WeatherContext);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export default function Home({data}: ApiResponse) {
           <meta name="description" content="An Weather App" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <Sidebar />
+        <Sidebar ip={ip}/>
         <Forecast />
       </S.Container>
     </SearchProvider>

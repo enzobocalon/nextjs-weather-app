@@ -4,8 +4,11 @@ import SidebarDisplayState from '../SidebarDisplayState';
 import * as S from './styles'
 import { useContext } from 'react';
 
+interface SidebarProps {
+  ip: string | undefined
+}
 
-const Sidebar = () => {
+const Sidebar = ({ip}: SidebarProps) => {
   const {isSearchActive} = useContext(SearchContext);
 
   return (
@@ -14,7 +17,7 @@ const Sidebar = () => {
         isSearchActive ? (
           <SearchDisplay />
         ) : (
-          <SidebarDisplayState />
+          <SidebarDisplayState ip={ip}/>
         )
       }
     </S.Container>
