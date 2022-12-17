@@ -1,6 +1,10 @@
 export interface Weather {
   temp_c: number,
   temp_f: number,
+  maxtemp_c: number,
+  maxtemp_f: number,
+  mintemp_c: number,
+  mintemp_f: number,
   condition: {
     text: string,
     code: number,
