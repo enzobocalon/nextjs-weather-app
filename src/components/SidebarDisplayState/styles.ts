@@ -6,7 +6,7 @@ import {motion} from 'framer-motion';
 
 export const Container = styled(motion.div)`
   background-color: #1E213A;
-  min-height: 100vh;
+  min-height: 100%;
 `;
 
 export const TopContent = styled.div`
