@@ -25,8 +25,6 @@ const WeatherCard = ({weather, limited}: WCProps) => {
     return formatDate(newDate.toISOString());
   };
 
-  console.log(weather)
-
   return (
     <S.Container>
       <p>{handleData(weather.date)}</p>

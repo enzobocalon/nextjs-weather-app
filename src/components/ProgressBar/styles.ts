@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface Props {
+  value: number;
+}
+
 export const Container = styled.div`
   width: 100%;
   display: flex;
@@ -25,11 +29,12 @@ export const ProgressBG = styled.div`
   border-radius: 80px;
 `;
 
-export const Progress = styled.div`
-  width: 84%;
+export const Progress = styled.div<Props>`
+  width: ${props => props.value ? `${props.value}%` : '0%'};
   height: 100%;
   background-color: #FFEC65;
   border-radius: 80px;
+  transition: all .3s ease;
 `;
 
 export const BottomLabel = styled.div`

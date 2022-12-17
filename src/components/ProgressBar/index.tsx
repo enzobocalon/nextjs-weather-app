@@ -1,6 +1,10 @@
 import * as S from './styles'
 
-const ProgressBar = () => {
+interface Props {
+  value: number;
+}
+
+const ProgressBar = ({value}: Props) => {
   return (
     <S.Container>
       <S.TopLabel>
@@ -10,9 +14,9 @@ const ProgressBar = () => {
       </S.TopLabel>
 
       <S.ProgressBG>
-        <S.Progress />
+        <S.Progress value={value}/>
       </S.ProgressBG>
-      
+
       <S.BottomLabel>
         <span>%</span>
       </S.BottomLabel>

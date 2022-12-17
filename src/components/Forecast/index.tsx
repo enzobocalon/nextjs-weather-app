@@ -10,7 +10,11 @@ import { WeatherContext } from '../../contexts/Weather';
 
 const Forecast = () => {
   const { weatherData } = useContext(WeatherContext);
-  console.log(weatherData?.forecast.forecastday[0].date)
+
+  if (!weatherData) {
+    return null;
+  }
+
   return (
     <S.Container>
       <S.Header>
@@ -24,9 +28,9 @@ const Forecast = () => {
       </S.Header>
 
       <S.ForecastRow>
-        <WeatherCard weather={weatherData?.forecast.forecastday[0]}/>
-        <WeatherCard weather={weatherData?.forecast.forecastday[1]}/>
-        <WeatherCard weather={weatherData?.forecast.forecastday[2]}/>
+        <WeatherCard weather={weatherData.forecast.forecastday[0]}/>
+        <WeatherCard weather={weatherData.forecast.forecastday[1]}/>
+        <WeatherCard weather={weatherData.forecast.forecastday[2]}/>
         <WeatherCard weather={undefined} limited={true}/>
         <WeatherCard weather={undefined} limited={true}/>
       </S.ForecastRow>
@@ -37,7 +41,7 @@ const Forecast = () => {
         <S.HightligthsGrid>
           <S.HightlightCard>
             <span>Wind Status</span>
-            <WeatherInformation title='7' subtitle='mph'/>
+            <WeatherInformation title={weatherData?.current.wind_mph} subtitle='mph'/>
             <S.CardFooter>
               <S.ArrowContainer>
                 <IoMdNavigate size={20}/>
@@ -47,16 +51,16 @@ const Forecast = () => {
           </S.HightlightCard>
           <S.HightlightCard>
             <span>Humidity</span>
-            <WeatherInformation title='84' subtitle='%'/>
-            <ProgressBar />
+            <WeatherInformation title={weatherData.current.humidity} subtitle='%'/>
+            <ProgressBar value={weatherData.current.humidity}/>
           </S.HightlightCard>
           <S.HightlightCard>
             <span>Visibility</span>
-            <WeatherInformation title='6,4' subtitle='miles'/>
+            <WeatherInformation title={weatherData.current.vis_miles} subtitle='miles'/>
           </S.HightlightCard>
           <S.HightlightCard>
             <span>Air Pressure</span>
-            <WeatherInformation title='998' subtitle='mb'/>
+            <WeatherInformation title={weatherData.current.pressure_mb} subtitle='mb'/>
           </S.HightlightCard>
         </S.HightligthsGrid>
       </S.Hightligths>
