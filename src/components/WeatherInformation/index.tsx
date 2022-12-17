@@ -1,7 +1,7 @@
 import * as S from './styles';
 
 interface WIProps {
-  title: string;
+  title: string | number;
   subtitle: string;
   isMainContent?: boolean;
 }
