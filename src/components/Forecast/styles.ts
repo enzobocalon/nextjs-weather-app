@@ -1,5 +1,17 @@
 import styled from "styled-components";
 
+const directions = ['NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW', 'N']
+
+const getAngle = (dir: string) => {
+  const index = directions.findIndex(direction => direction === dir) + 1;
+  if (directions[index] == 'N') return 0
+  return 22.5*index;
+}
+
+interface Props {
+  direction: string;
+}
+
 export const Container = styled.section`
   padding: 2rem;
   padding-left: 9.5rem;
@@ -74,7 +86,7 @@ export const CardFooter = styled.div`
   }
 `;
 
-export const ArrowContainer = styled.div`
+export const ArrowContainer = styled.div<Props>`
   background-color: rgba(255, 255, 255, 0.3);
   width: 30px;
   height: 30px;
@@ -84,6 +96,6 @@ export const ArrowContainer = styled.div`
   border-radius: 50%;
 
   svg {
-    transform: rotate(-150deg);
+    transform: ${props => props.direction ? `rotate(${getAngle(props.direction)}deg)` : 'rotate(0)'};
   }
 `;

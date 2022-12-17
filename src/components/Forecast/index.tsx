@@ -15,6 +15,8 @@ const Forecast = () => {
     return null;
   }
 
+  console.log(weatherData)
+
   return (
     <S.Container>
       <S.Header>
@@ -43,10 +45,10 @@ const Forecast = () => {
             <span>Wind Status</span>
             <WeatherInformation title={weatherData?.current.wind_mph} subtitle='mph'/>
             <S.CardFooter>
-              <S.ArrowContainer>
+              <S.ArrowContainer direction={weatherData.current.wind_dir}>
                 <IoMdNavigate size={20}/>
               </S.ArrowContainer>
-              <span>WSW</span>
+              <span>{weatherData.current.wind_dir}</span>
             </S.CardFooter>
           </S.HightlightCard>
           <S.HightlightCard>
