@@ -310,6 +310,6 @@ export const conditions: Condition[] =
   ]
 
   export const getCondition = (code: number) => {
-    const result = conditions.filter(condition => condition.code === code)
-    return result[0].icon.src
+    const result = conditions.filter(condition => condition.code === code);
+    return result[0].icon.src;
   }
