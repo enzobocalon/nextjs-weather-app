@@ -34,7 +34,11 @@ const SidebarDisplayState = ({ip}: Props) => {
   }
 
   return (
-    <S.Container animate={{x: 0}} initial={{x: '-100%'}} transition={{ease: "linear", duration: .3}}>
+    <S.Container
+    animate={{x: 0, opacity: 1}}
+    initial={{x: '-100%', opacity: 0}}
+    transition={{ease: "easeInOut", duration: .3}}
+    exit={{x: '-100%', opacity: 0}}>
       <S.TopContent>
         <Button buttonType='normal' onClick={() => setIsSearchActive(true)}>
           Search for places

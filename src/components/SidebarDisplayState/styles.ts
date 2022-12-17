@@ -7,6 +7,10 @@ import {motion} from 'framer-motion';
 export const Container = styled(motion.div)`
   background-color: #1E213A;
   min-height: 100%;
+
+  @media (max-width: 850px) {
+    min-height: 100vh;
+  }
 `;
 
 export const TopContent = styled.div`
@@ -51,7 +55,7 @@ export const MiddleContent = styled.div`
       max-width: 100%;
       background-size: 550px;
       background-position: 50% 100%;
-  }
+    }
   }
 
 `;

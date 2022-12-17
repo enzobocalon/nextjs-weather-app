@@ -10,6 +10,9 @@ export const Container = styled(motion.div)`
   gap: 3rem;
   background-color: #1E213A;
 
+  @media (max-width: 850px) {
+    min-height: 100vh;
+  }
 `;
 
 export const CloseContainer = styled.div`
