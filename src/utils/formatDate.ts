@@ -8,5 +8,11 @@ export const formatDate = (currentDate: string) => {
   const month = months[date.getMonth()];
   const day = date.getDate();
 
+  const tomorrow = new Date().getDate() + 1;
+
+  if (date.getDate() === tomorrow) {
+    return 'Tomorrow'
+  }
+
   return `${weekDay}, ${day} ${month}`
 };
