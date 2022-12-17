@@ -15,7 +15,7 @@ import { formatDate } from '../../utils/formatDate';
 
 const SidebarDisplayState = () => {
   const {setIsSearchActive} = useContext(SearchContext);
-  const { weatherData } = useContext(WeatherContext);
+  const { celsius, weatherData } = useContext(WeatherContext);
 
   if (!weatherData) {
     return null;
@@ -38,7 +38,7 @@ const SidebarDisplayState = () => {
       </S.MiddleContent>
 
       <S.LowerMiddleContent>
-        <WeatherInformation title={weatherData.current.temp_c} subtitle='ºC' isMainContent={true}/>
+        <WeatherInformation title={celsius ? weatherData.current.temp_c : weatherData.current.temp_f} subtitle={celsius ? 'ºC' : 'ºF'} isMainContent={true}/>
         <h2>{weatherData.current.condition.text}</h2>
       </S.LowerMiddleContent>
 

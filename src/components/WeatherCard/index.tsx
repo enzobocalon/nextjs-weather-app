@@ -3,6 +3,8 @@ import * as S from './styles'
 import WeatherDisplay from '../WeatherDisplay';
 import { formatDate } from '../../utils/formatDate';
 import { WeatherForecast } from '../../types/ApiResponse';
+import { useContext } from 'react';
+import { WeatherContext } from '../../contexts/Weather';
 
 interface WCProps{
   weather: WeatherForecast | undefined,
@@ -10,7 +12,7 @@ interface WCProps{
 }
 
 const WeatherCard = ({weather, limited}: WCProps) => {
-
+  const {celsius} = useContext(WeatherContext)
   if (limited || !weather) {
     return (
       <S.LimitedContainer>
@@ -30,8 +32,8 @@ const WeatherCard = ({weather, limited}: WCProps) => {
       <p>{handleData(weather.date)}</p>
       <WeatherDisplay isMainWeather={false} weather={weather.day.condition.code}/>
       <div>
-        <span>{weather.day.mintemp_c} ºC</span>
-        <span>{weather.day.maxtemp_c}ºC</span>
+        <span>{celsius ? weather.day.mintemp_c : weather.day.mintemp_f} {celsius ? 'ºC' : 'ºF'}</span>
+        <span>{celsius ? weather.day.maxtemp_c : weather.day.mintemp_f} {celsius ? 'ºC' : 'ºF'}</span>
       </div>
     </S.Container>
   );

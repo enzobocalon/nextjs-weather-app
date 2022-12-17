@@ -1,12 +1,11 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  padding: 1.125rem 1.25rem;
+  padding: 1.125rem 0;
   background-color: #1E213A;
   display: flex;
   flex-direction: column;
   align-items: center;
-
   img {
     margin-top: 10px;
   }
@@ -16,6 +15,12 @@ export const Container = styled.div`
     display: flex;
     width: 100%;
     justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+
+    span {
+      margin: 0 auto;
+    }
   }
 `;
 

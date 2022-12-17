@@ -21,6 +21,7 @@ export const Container = styled.section`
   flex-direction: column;
   align-items: center;
   gap: 72px;
+  margin: 0 auto;
 
   @media (max-width: 1439px) {
     padding: 2rem;
