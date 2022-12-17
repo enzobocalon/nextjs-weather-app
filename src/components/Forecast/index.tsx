@@ -5,7 +5,12 @@ import { IoMdNavigate } from 'react-icons/io'
 import * as S from './styles'
 import ProgressBar from '../ProgressBar';
 
+import { useContext } from 'react';
+import { WeatherContext } from '../../contexts/Weather';
+
 const Forecast = () => {
+  const { weatherData } = useContext(WeatherContext);
+  console.log(weatherData?.forecast.forecastday[0].date)
   return (
     <S.Container>
       <S.Header>
@@ -19,11 +24,11 @@ const Forecast = () => {
       </S.Header>
 
       <S.ForecastRow>
-        <WeatherCard />
-        <WeatherCard />
-        <WeatherCard />
-        <WeatherCard />
-        <WeatherCard />
+        <WeatherCard weather={weatherData?.forecast.forecastday[0]}/>
+        <WeatherCard weather={weatherData?.forecast.forecastday[1]}/>
+        <WeatherCard weather={weatherData?.forecast.forecastday[2]}/>
+        <WeatherCard weather={undefined} limited={true}/>
+        <WeatherCard weather={undefined} limited={true}/>
       </S.ForecastRow>
 
       <S.Hightligths>

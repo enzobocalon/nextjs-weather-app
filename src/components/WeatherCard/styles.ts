@@ -18,3 +18,12 @@ export const Container = styled.div`
     justify-content: space-between;
   }
 `;
+
+export const LimitedContainer = styled.div`
+  padding: 1.125rem 1.25rem;
+  background-color: #1E213A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+`;
