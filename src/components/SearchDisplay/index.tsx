@@ -46,7 +46,9 @@ const SearchDisplay = () => {
       <S.SearchContainer>
         <S.Search>
           <MdOutlineSearch size={32}/>
-          <S.SearchInput value={search} onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}/>
+          <S.SearchInput
+          value={search}
+          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}/>
         </S.Search>
 
         <Button customBackground='#3C47E9' buttonType='normal'>

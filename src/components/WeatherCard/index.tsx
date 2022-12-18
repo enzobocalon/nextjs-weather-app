@@ -30,7 +30,9 @@ const WeatherCard = ({weather, limited}: WCProps) => {
   return (
     <S.Container>
       <p>{handleData(weather.date)}</p>
-      <WeatherDisplay isMainWeather={false} weather={weather.day.condition.code}/>
+      <WeatherDisplay
+        isMainWeather={false}
+        weather={weather.day.condition.code}/>
       <div>
         <span>{celsius ? weather.day.mintemp_c : weather.day.mintemp_f} {celsius ? 'ºC' : 'ºF'}</span>
         <span>{celsius ? weather.day.maxtemp_c : weather.day.mintemp_f} {celsius ? 'ºC' : 'ºF'}</span>

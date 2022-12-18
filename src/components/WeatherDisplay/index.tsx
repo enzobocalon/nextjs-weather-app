@@ -13,7 +13,11 @@ const WeatherDisplay = ({weather, isMainWeather}: WeatherProps) => {
   return (
     <>
       <S.Container>
-        <Image src={weather ? getCondition(weather) : clear} width={isMainWeather ? 150 : 50} height={isMainWeather ? 150 : 50} alt={'current weather'}/>
+        <Image
+          src={weather ? getCondition(weather) : clear}
+          width={isMainWeather ? 150 : 50}
+          height={isMainWeather ? 150 : 50}
+          alt={'current weather'}/>
       </S.Container>
     </>
   );

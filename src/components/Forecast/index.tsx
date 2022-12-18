@@ -1,8 +1,10 @@
 import Button from '../Button';
 import WeatherCard from '../WeatherCard';
-import WeatherInformation from '../WeatherInformation';
-import { IoMdNavigate } from 'react-icons/io'
 import * as S from './styles'
+
+import { IoMdNavigate } from 'react-icons/io'
+
+import WeatherInformation from '../WeatherInformation';
 import ProgressBar from '../ProgressBar';
 
 import { useContext } from 'react';
@@ -17,15 +19,25 @@ const Forecast = () => {
 
   return (
     <S.Container
-    animate={{x: 0, opacity: 1}}
-    initial={{x: '100%', opacity: 0}}
-    transition={{ease: "easeInOut", duration: .3}}>
+      animate={{x: 0, opacity: 1}}
+      initial={{x: '100%', opacity: 0}}
+      transition={{ease: "easeInOut", duration: .3}}>
       <S.Header>
-        <Button buttonType='rounded' fontWeight='700' fontSize='18' isActive={celsius} onClick={() => setCelsius(true)}>
+        <Button
+          buttonType='rounded'
+          fontWeight='700'
+          fontSize='18'
+          isActive={celsius}
+          onClick={() => setCelsius(true)}>
           ºC
         </Button>
 
-        <Button buttonType='rounded' fontWeight='700' fontSize='18' isActive={!celsius} onClick={() => setCelsius(false)}>
+        <Button
+          buttonType='rounded'
+          fontWeight='700'
+          fontSize='18'
+          isActive={!celsius}
+          onClick={() => setCelsius(false)}>
           ºF
         </Button>
       </S.Header>

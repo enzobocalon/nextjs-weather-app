@@ -35,26 +35,35 @@ const SidebarDisplayState = ({ip}: Props) => {
 
   return (
     <S.Container
-    animate={{x: 0, opacity: 1}}
-    initial={{x: '-100%', opacity: 0}}
-    transition={{ease: "easeInOut", duration: .3}}
-    exit={{x: '-100%', opacity: 0}}>
+      animate={{x: 0, opacity: 1}}
+      initial={{x: '-100%', opacity: 0}}
+      transition={{ease: "easeInOut", duration: .3}}
+      exit={{x: '-100%', opacity: 0}}>
       <S.TopContent>
-        <Button buttonType='normal' onClick={() => setIsSearchActive(true)}>
+        <Button
+        buttonType='normal'
+        onClick={() => setIsSearchActive(true)}>
           Search for places
         </Button>
 
-        <Button buttonType='rounded' onClick={handleSearch}>
-          <BiTargetLock color='#E7E7EB' size={24}/>
+        <Button
+          buttonType='rounded'
+          onClick={handleSearch}>
+            <BiTargetLock color='#E7E7EB' size={24}/>
         </Button>
       </S.TopContent>
 
       <S.MiddleContent>
-        <WeatherDisplay weather={weatherData.current.condition.code} isMainWeather={true}/>
+        <WeatherDisplay
+          weather={weatherData.current.condition.code}
+          isMainWeather={true}/>
       </S.MiddleContent>
 
       <S.LowerMiddleContent>
-        <WeatherInformation title={celsius ? weatherData.current.temp_c : weatherData.current.temp_f} subtitle={celsius ? 'ºC' : 'ºF'} isMainContent={true}/>
+        <WeatherInformation
+          title={celsius ? weatherData.current.temp_c : weatherData.current.temp_f}
+          subtitle={celsius ? 'ºC' : 'ºF'}
+          isMainContent={true}/>
         <h2>{weatherData.current.condition.text}</h2>
       </S.LowerMiddleContent>
 
