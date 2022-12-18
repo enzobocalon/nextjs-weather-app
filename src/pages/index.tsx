@@ -47,7 +47,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
 
   // Handle API Data
 
-    const response = await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=8cdae16bc23d4715b9e164704221612&q=London&days=5&aqi=no&alerts=no`, {
+    const response = await axios.get(`http://api.weatherapi.com/v1/forecast.json?key=8cdae16bc23d4715b9e164704221612&q=${ip}&days=5&aqi=no&alerts=no`, {
       headers: { "Accept-Encoding": "gzip,deflate,compress" }
     });
 
