@@ -32,4 +32,9 @@ export const Button = styled.button<Props>`
   & > svg {
     flex: 1;
   }
+
+  &:hover{
+    transform: ${props => props.isActive ? '' : 'scale(1.05)'};
+    transition: all .3s ease;
+  }
 `;
