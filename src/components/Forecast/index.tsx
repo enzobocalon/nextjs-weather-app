@@ -16,7 +16,10 @@ const Forecast = () => {
   }
 
   return (
-    <S.Container>
+    <S.Container
+    animate={{x: 0, opacity: 1}}
+    initial={{x: '100%', opacity: 0}}
+    transition={{ease: "easeInOut", duration: .3}}>
       <S.Header>
         <Button buttonType='rounded' fontWeight='700' fontSize='18' isActive={celsius} onClick={() => setCelsius(true)}>
           ºC

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from 'framer-motion';
 
 const directions = ['NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW', 'N']
 
@@ -11,7 +12,7 @@ interface Props {
   direction: string;
 }
 
-export const Container = styled.section`
+export const Container = styled(motion.section)`
   padding: 2rem;
   padding-left: 9.5rem;
   padding-right: 7.8125rem;
