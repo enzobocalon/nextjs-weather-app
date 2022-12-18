@@ -24,7 +24,7 @@ const WeatherCard = ({weather, limited}: WCProps) => {
   const handleData = (date: string) => {
     const newDate = new Date(date);
     newDate.setDate(newDate.getDate() + 2);
-    return formatDate(newDate.toISOString());
+    return formatDate(newDate.toISOString(), true);
   };
 
   return (
